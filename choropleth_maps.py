@@ -43,3 +43,13 @@ variable = 'pop_density_per_hectare'
 vmin, vmax = 120, 220
 # create figure and axes for Matplotlib
 fig, ax = plt.subplots(1, figsize=(10, 6))
+# remove axes
+ax.axis("off")
+#plot map
+merged_dataset.plot(column=variable, cmap="Blues", linewidth=0.8, ax=ax, edgecolor=0.8)
+# add a title
+ax.set_title('Population Density per Hectare', fontdict={'fontsize': '25', 'fontweight' : '3'})
+# create an annotation for the data source
+ax.annotate('Source: London Datastore, 2014',xy=(0.1, .08),
+            xycoords='figure fraction', horizontalalignment='left',
+            verticalalignment='top', fontsize=12, color='#555555')
