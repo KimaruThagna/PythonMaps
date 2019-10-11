@@ -53,3 +53,10 @@ ax.set_title('Population Density per Hectare', fontdict={'fontsize': '25', 'font
 ax.annotate('Source: London Datastore, 2014',xy=(0.1, .08),
             xycoords='figure fraction', horizontalalignment='left',
             verticalalignment='top', fontsize=12, color='#555555')
+
+# Create colorbar as a legend
+sm = plt.cm.ScalarMappable(cmap='Blues', norm=plt.Normalize(vmin=vmin, vmax=vmax))
+# empty array for the data range
+sm._A = []
+# add the colorbar to the figure
+cbar = fig.colorbar(sm)
